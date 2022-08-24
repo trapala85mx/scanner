@@ -15,7 +15,7 @@ monedas=[]
 futures_exchange_info = client.futures_ticker()
 
 for element in futures_exchange_info:
-    if 'USDT' in element['symbol'] and float(element['quoteVolume'])>200000000.00 and float(element['lastPrice'])<5:
+    if 'USDT' in element['symbol'] and float(element['quoteVolume'])>200_000_000.00 and float(element['lastPrice'])<5:
         monedas.append(element)
 
 
