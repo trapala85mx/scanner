@@ -19,6 +19,9 @@ for element in futures_exchange_info:
     if 'USDT' in element['symbol'] and float(element['quoteVolume'])>200000000.00 and float(element['lastPrice'])<5:
         monedas.append(element)
 
+# Te agrego en un list comprehension y te hago una anotación
+# en ves de usar 'USDT' in element['symbol'] usa element['symbol'][-4:] == 'USDT'
+# monedas = [element['symbol'] for element in futures_exchange_info if element['symbol'][-4:] == 'USDT' and float(element['quoteVolume'])>200000000.00 and float(element['lastPrice'])<5]
 
 ticker_dataframe = pd.DataFrame(monedas)
 ticker_dataframe=ticker_dataframe[['symbol','lastPrice','quoteVolume']]
